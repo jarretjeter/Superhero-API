@@ -101,10 +101,9 @@ def add_stats():
             else:
                 logger.info(f"Superhero: {superhero} cannot be added")
                 heroes_not_added.append(superhero)
-        logger.info(f"Added {len(heroes_added)}, did not add {len(heroes_not_added)}")
-        resp_json = {f"Heroes added": f"{len(heroes_added)}",
-        "result": heroes_added,
-        "not added": heroes_not_added}
+        logger.info(f"Added: {len(heroes_added)}, Not added: {len(heroes_not_added)}")
+        resp_json = {f"Heroes added": f"{len(heroes_added)}, {heroes_added}",
+        "Not added": f"{len(heroes_not_added)}, {heroes_not_added}"}
         resp_headers = {"content-type": "application/json"}
         return resp_json, 200, resp_headers
     except Exception as err:
