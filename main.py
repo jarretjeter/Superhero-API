@@ -11,11 +11,11 @@ logger: logging.Logger = logging
 
 # creating a list of dictionaries
 super_data = [
-      {"name":  "Batman", "superpower":  "intellect", "weakness":  "identity"},
-      {"name":  "Spawn", "superpower":  "necroplasm", "weakness": "decapitation" },
-      {"name":  "Spiderman", "superpower":  "spider-sense", "weakness":  "pesticide"},
-      {"name":  "Bruce Wayne", "superpower":  "intellect", "weakness":  "identity"}
-  ]
+    {"name":  "Batman", "superpower":  "intellect", "weakness":  "identity"},
+    {"name":  "Spawn", "superpower":  "necroplasm", "weakness": "decapitation" },
+    {"name":  "Spiderman", "superpower":  "spider-sense", "weakness":  "pesticide"},
+    {"name":  "Bruce Wayne", "superpower":  "intellect", "weakness":  "identity"}
+    ]
 # Converting list dictionary keys into columns, and key-values into column-values for a dataframe
 super_df  = pd.DataFrame(super_data)
 # Setting the name column as the index
@@ -61,9 +61,9 @@ def stats():
         # Logger tells what was queried
         logger.info(f"Querying superheroes with superpower: {superpower} and weakness: {weakness}")
         resp_json = {
-          "query": f"superpower: {superpower}, weakness: {weakness}",
-          "response": result_df.to_dict(orient="records")
-          }
+            "query": f"superpower: {superpower}, weakness: {weakness}",
+            "response": result_df.to_dict(orient="records")
+        }
         resp_headers = {"content-type":"application/json"}
         return resp_json, 200, resp_headers
 
